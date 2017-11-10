@@ -13,6 +13,13 @@ public class User {
     @Column(name = "userId")
     private Long userId;
 
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "nickname", unique = true, nullable = false)
+    private String nickname;
+
+    /* this is email in registration form */
     @Column(name = "username", unique = true, nullable = false)
     private String username;
 
@@ -60,4 +67,19 @@ public class User {
         this.roles = roles;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -34,7 +34,6 @@ public class UserServiceImpl implements UserService {
         Role role = roleDao.findRoleByRoleName(roleName);
         user.getRoles().add(role);
         userDao.save(user);
-        Long roleId = role.getRoleId();
     }
 
 }
