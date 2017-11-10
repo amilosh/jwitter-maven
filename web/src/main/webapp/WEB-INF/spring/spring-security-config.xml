@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <http auto-config="true" use-expressions="true">
+        <intercept-url pattern="/1" access="permitAll"/>
+        <intercept-url pattern="/user1" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/admin1" access="hasRole('ROLE_ADMIN')"/>
+
+        <form-login login-page="/login"
+                    default-target-url="/"
+                    username-parameter="username"
+                    password-parameter="password"
+                    authentication-failure-url="/login?error"/>
+        <access-denied-handler error-page="/access_denied1"/>
+        <csrf/>
+        <remember-me remember-me-parameter="spring_security_remember_me"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="authService"/>
+    </authentication-manager>
+
+    <b:bean id="authService" class="by.it.milosh.authentication.AuthenticationService"/>
+
+</b:beans>
