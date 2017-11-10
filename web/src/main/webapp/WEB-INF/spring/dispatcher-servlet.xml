@@ -10,6 +10,9 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+    <import resource="classpath*:beans-dao.xml"/>
+    <import resource="classpath*:beans-service.xml"/>
+
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <context:component-scan base-package="by.it.milosh.controllers"/>
