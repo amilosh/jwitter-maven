@@ -15,7 +15,9 @@
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+    <context:component-scan base-package="by.it.milosh.authentication"/>
     <context:component-scan base-package="by.it.milosh.controllers"/>
+    <context:component-scan base-package="by.it.milosh.RESTmodel"/>
 
     <mvc:annotation-driven/>
 

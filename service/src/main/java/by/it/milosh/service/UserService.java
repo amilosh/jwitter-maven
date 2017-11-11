@@ -9,4 +9,6 @@ public interface UserService {
     void saveByRole(User user, String roleName);
 
     User findUserByUsername(String username);
+
+    User findUserByNickname(String nickname);
 }

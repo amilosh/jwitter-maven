@@ -30,4 +30,12 @@ public class UserDaoImpl implements UserDao {
                 .add(Restrictions.eq("username", username))
                 .uniqueResult();
     }
+
+    @Override
+    public User findUserByNickname(String nickname) {
+        return (User) getSession()
+                .createCriteria(User.class)
+                .add(Restrictions.eq("nickname", nickname))
+                .uniqueResult();
+    }
 }

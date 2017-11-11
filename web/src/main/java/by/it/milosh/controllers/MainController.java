@@ -1,5 +1,7 @@
 package by.it.milosh.controllers;
 
+import by.it.milosh.RESTmodel.Response;
+import by.it.milosh.RESTmodel.UserRequest;
 import by.it.milosh.enumeration.RoleEnum;
 import by.it.milosh.pojo.User;
 import by.it.milosh.service.UserService;
@@ -10,11 +12,10 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -44,6 +45,9 @@ public class MainController {
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
+        Cookie cookie = new Cookie("remember-me", "");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
         return "redirect:/";
     }
 
@@ -65,6 +69,37 @@ public class MainController {
         }
         userService.saveByRole(user, RoleEnum.USER.getName());
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/main")
+    public String showEmployeePage() {
+        return "main";
+    }
+
+    @RequestMapping(value = "/getResponse", method = RequestMethod.POST, produces = "application/json")
+    public @ResponseBody
+    Response getResponse(@RequestBody UserRequest userRequest) {
+        Response response = new Response();
+        User user = userService.findUserByUsername(userRequest.getUsername());
+        if (user == null) {
+            response.setMessage("false");
+        } else {
+            response.setMessage("true");
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/checkNickname", method = RequestMethod.POST, produces = "application/json")
+    public @ResponseBody
+    Response checkNickname(@RequestBody UserRequest userRequest) {
+        Response response = new Response();
+        User user = userService.findUserByNickname(userRequest.getUsername());
+        if (user == null) {
+            response.setMessage("false");
+        } else {
+            response.setMessage("true");
+        }
+        return response;
     }
 
 }

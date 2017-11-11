@@ -1,9 +1,3 @@
 <div>
-    <p>NAVBAR</p>
+    <span>default NavBar</span>
 </div>
-
-<br/>
-
-<span class="spanDefaultNavBar">
-    span default NavBar
-</span>

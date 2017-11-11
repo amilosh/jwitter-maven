@@ -170,7 +170,9 @@ body {
 	background-color: #E7F5FE;
 	cursor: pointer;
 }
-
+.front-signin-button:focus {
+    outline: 0;
+}
 
 
 
@@ -207,6 +209,9 @@ body {
 .front-signup-button:hover {
 	background-color: #E7F5FE;
 	cursor: pointer;
+}
+.front-signup-button:focus {
+    outline: 0;
 }
 
 

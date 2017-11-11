@@ -1,9 +1,3 @@
 <div>
-    <h1>C O N T E N T</h1>
+    <span>default content</span>
 </div>
-
-<br/>
-
-<span class="spanDefaultContent">
-    span default content
-</span>

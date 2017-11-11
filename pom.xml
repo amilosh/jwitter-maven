@@ -32,6 +32,7 @@
         <cglib.version>3.1</cglib.version>
         <aspectj.version>1.8.4</aspectj.version>
         <tiles.version>3.0.5</tiles.version>
+        <jackson.version>2.6.0</jackson.version>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.12</slf4j.version>
@@ -175,6 +176,23 @@
                 <groupId>org.apache.tiles</groupId>
                 <artifactId>tiles-el</artifactId>
                 <version>${tiles.version}</version>
+            </dependency>
+
+            <!-- JavaScript, JQuery, Ajax, JSon for Spring 4.3.3 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!--CgLib-->

@@ -3,17 +3,6 @@
 
 <tiles-definitions>
 
-    <definition name="template" template="/WEB-INF/views/template/template.jsp">
-        <put-attribute name="title" value=""/>
-        <put-attribute name="header" value="/WEB-INF/views/template/defaultHeader.jsp"/>
-        <put-attribute name="navBar" value="/WEB-INF/views/template/defaultNavBar.jsp"/>
-        <put-attribute name="content" value="/WEB-INF/views/template/defaultContent.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/views/template/defaultFooter.jsp"/>
-    </definition>
-    <definition name="index" extends="template">
-        <put-attribute name="title" value="Index page"/>
-        <put-attribute name="content" value="/WEB-INF/views/main/index.jsp"/>
-    </definition>
     <definition name="startTemplate" template="/WEB-INF/views/template/start/startTemplate.jsp">
         <put-attribute name="title" value=""/>
         <put-attribute name="header" value="/WEB-INF/views/template/defaultHeader.jsp"/>
@@ -33,34 +22,6 @@
         <put-attribute name="title" value="Registration page"/>
         <put-attribute name="header" value="/WEB-INF/views/start/registrationHeader.jsp"/>
         <put-attribute name="content" value="/WEB-INF/views/start/registration.jsp"/>
-    </definition>
-
-
-
-
-
-    <definition name="template1" template="/WEB-INF/views/template1.jsp">
-        <put-attribute name="title" value=""/>
-    </definition>
-    <definition name="main1" extends="template1">
-        <put-attribute name="title" value="main page"/>
-        <put-attribute name="content" value="/WEB-INF/views/main1.jsp"/>
-    </definition>
-    <definition name="user1" extends="template1">
-        <put-attribute name="title" value="user page"/>
-        <put-attribute name="content" value="/WEB-INF/views/user1.jsp"/>
-    </definition>
-    <definition name="admin1" extends="template1">
-        <put-attribute name="title" value="admin page"/>
-        <put-attribute name="content" value="/WEB-INF/views/admin1.jsp"/>
-    </definition>
-    <definition name="login1" extends="template1">
-        <put-attribute name="title" value="login page"/>
-        <put-attribute name="content" value="/WEB-INF/views/login1.jsp"/>
-    </definition>
-    <definition name="access_denied1" extends="template1">
-        <put-attribute name="title" value="access_denied page"/>
-        <put-attribute name="content" value="/WEB-INF/views/access-denied1.jsp"/>
     </definition>
 
 </tiles-definitions>

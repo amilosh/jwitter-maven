@@ -23,13 +23,13 @@
                 Запомнить
             </label>
 
-            <div>
-                <c:if test="${not empty error}">
-                    неправильные имя или пароль
-                </c:if>
-            </div><br/><br/>
-
             <input type="submit" value="Войти"/>
+
+            <div class="errorMessage">
+                <c:if test="${not empty error}">
+                    <span>Неправильные имя или пароль!</span>
+                </c:if>
+            </div>
 
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 

@@ -1,9 +1,3 @@
 <div>
-    <h3>custom FOOTER</h3>
+    <span>default footer</span>
 </div>
-
-<br/>
-
-<span class="spanDefaultFooter">
-    span default footer
-</span>

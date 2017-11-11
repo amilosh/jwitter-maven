@@ -30,6 +30,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserByNickname(String nickname) {
+        return userDao.findUserByNickname(nickname);
+    }
+
+    @Override
     public void saveByRole(User user, String roleName) {
         Role role = roleDao.findRoleByRoleName(roleName);
         user.getRoles().add(role);

@@ -1,9 +1,3 @@
 <div>
-    <h3>custom header</h3>
+    <span>default header</span>
 </div>
-
-<br/>
-
-<span class="spanDefaultHeader">
-    span default header
-</span>

@@ -96,13 +96,29 @@ body {
 
 
 
+.signupWrapper {
+    margin-top: 170px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
+    height: 700px;
+}
+.signupEmty {
+    width: 440px;
+    height: 600px;
+    display: inline-block;
+    float: left;
+}
+
+
+
+
 .signup {
-	margin-top: 170px;
-	margin-bottom: 0px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 400px;
-	height: 600px;	
+    margin-bottom: 0px;
+    width: 400px;
+    height: 600px;
+    display: inline-block;
 }
 .signup-message {
 	font-family: "Segoe UI",Arial,sans-serif;
@@ -147,4 +163,71 @@ input[type=submit] {
 input[type=submit]:hover {
 	background-color: #0870AF;
 	cursor: pointer;
+}
+input[type=submit]:focus {
+    outline: 0;
+}
+
+
+
+.ajaxDiv {
+    width: 440px;
+    height: 600px;
+    display: inline-block;
+    float: right;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+.ajaxName {
+    margin-top: 106px;
+    padding-left: 20px;
+}
+.ajaxNickname {
+    margin-top: 45px;
+    padding-left: 20px;
+}
+.ajaxEmail {
+    margin-top: 45px;
+    padding-left: 20px;
+}
+.ajaxPassword {
+    margin-top: 45px;
+    padding-left: 20px;
+}
+.ajaxDiv span {
+    color: rgba(0, 0, 0, 0.6);
+}
+.ajaxDivSpan {
+    font-size: 18px;
+}
+
+i.check {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    margin: -3px 2px 1px;
+    border: solid red;
+    border-color: green;
+    border-width: 0 5px 5px 0;
+    transform: rotate( 45deg);
+}
+
+.cross {
+    height: 24px;
+    width: 24px;
+    background-color: #e6ecf0;
+    border-radius: 5px;
+    position: relative;
+}
+
+.cross:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c";
+    font-size: 24px;
+    color: red;
+    line-height: 24px;
+    text-align: center;
 }
