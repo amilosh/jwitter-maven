@@ -20,10 +20,21 @@
 
 
 <c:choose>
-    <%-- Если пользователь нуже вошёл в систему, то показывать персональную страницу пользователя --%>
+    <%-- Если пользователь уже вошёл в систему, то показывать персональную страницу пользователя --%>
     <c:when test="${pageContext.request.userPrincipal.name != null}">
         <div style="width: 100vw; height: 100vh; background-color: white">
-            Hello ${pageContext.request.userPrincipal.name} | <a href="${contextPath}/logout">Logout </a>
+            Hello ${pageContext.request.userPrincipal.name} | <a href="${contextPath}/logout">Logout </a><br/><br/>
+            <c:choose>
+                <c:when test="${user != null}">
+                    ${user}<br/><br/>
+                    ${user.nickname}<br/><br/>
+                    <a href="${contextPath}/${user.nickname}">${user.nickname}</a>
+                </c:when>
+                <c:otherwise>
+
+                </c:otherwise>
+            </c:choose>
+
         </div>
     </c:when>
 

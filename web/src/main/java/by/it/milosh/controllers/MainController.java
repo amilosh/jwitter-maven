@@ -8,6 +8,7 @@ import by.it.milosh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.security.Principal;
 
 @Controller
 public class MainController {
@@ -27,9 +30,23 @@ public class MainController {
     private UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(ModelAndView model) {
+    public String index(Model model, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails)principal).getUsername();
+            User user = userService.findUserByUsername(username);
+            model.addAttribute("user", user);
+        }
         return "start";
     }
+
+    @RequestMapping(value = "/{nickname}", method = RequestMethod.GET)
+    public String personalPage(@PathVariable String nickname, Model model) {
+        User user = userService.findUserByNickname(nickname);
+        model.addAttribute("user", user);
+        return "personal";
+    }
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error) {

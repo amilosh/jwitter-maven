@@ -14,7 +14,8 @@
                     default-target-url="/"
                     username-parameter="username"
                     password-parameter="password"
-                    authentication-failure-url="/login?error"/>
+                    authentication-failure-url="/login?error"
+                    authentication-success-handler-ref="successHandler"/>
         <access-denied-handler error-page="/access_denied1"/>
         <logout logout-url="/logout"/>
         <csrf/>
@@ -26,5 +27,7 @@
     </authentication-manager>
 
     <b:bean id="authService" class="by.it.milosh.authentication.AuthenticationService"/>
+
+    <b:bean id="successHandler" class="by.it.milosh.authentication.CustomAuthenticationSuccessHandler"/>
 
 </b:beans>
