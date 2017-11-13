@@ -3,7 +3,9 @@ package by.it.milosh.controllers;
 import by.it.milosh.RESTmodel.Response;
 import by.it.milosh.RESTmodel.UserRequest;
 import by.it.milosh.enumeration.RoleEnum;
+import by.it.milosh.pojo.Tweet;
 import by.it.milosh.pojo.User;
+import by.it.milosh.service.TweetService;
 import by.it.milosh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -22,12 +24,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class MainController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TweetService tweetService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
@@ -40,10 +46,30 @@ public class MainController {
         return "start";
     }
 
-    @RequestMapping(value = "/{nickname}", method = RequestMethod.GET)
+    /* проблема в том, что в качестве параметра nickname при первой загрузке идёт "favicon" */
+//    @RequestMapping(value = "/{nickname}", method = RequestMethod.GET)
+//    public String personalPage(@PathVariable String nickname, Model model) {
+//        String checkFavicon = new String("favicon");
+//        if (checkFavicon.equals(nickname)) {
+//            return "start";
+//        } else {
+//            User user = userService.findUserByNickname(nickname);
+//            model.addAttribute("user", user);
+//            Tweet tweet = new Tweet();
+//            tweet.setContent("second tweet");
+//            tweetService.save(tweet);
+//            return "personal";
+//        }
+//    }
+
+    @RequestMapping(value = "/personal/{nickname}", method = RequestMethod.GET)
     public String personalPage(@PathVariable String nickname, Model model) {
         User user = userService.findUserByNickname(nickname);
         model.addAttribute("user", user);
+        List<Tweet> tweets = tweetService.getAllTweetsByNicknameOfUser(nickname);
+        model.addAttribute("tweets", tweets);
+        Tweet tweet = new Tweet();
+        model.addAttribute(tweet);
         return "personal";
     }
 

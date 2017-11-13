@@ -178,7 +178,7 @@
                 <version>${tiles.version}</version>
             </dependency>
 
-            <!-- JavaScript, JQuery, Ajax, JSon for Spring 4.3.3 -->
+            <!-- JavaScript, JQuery, Ajax, JSon for Spring 4.3.4 -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>

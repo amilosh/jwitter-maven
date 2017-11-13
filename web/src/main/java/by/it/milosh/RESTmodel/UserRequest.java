@@ -1,8 +1,5 @@
 package by.it.milosh.RESTmodel;
 
-/**
- * Created by USER on 10.11.2017.
- */
 public class UserRequest {
 
     private String username;

@@ -1,8 +1,5 @@
 package by.it.milosh.RESTmodel;
 
-/**
- * Created by USER on 11.11.2017.
- */
 public class Response {
     private String message;
 

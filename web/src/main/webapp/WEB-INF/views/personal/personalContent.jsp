@@ -6,6 +6,7 @@
 
 <head>
     <link rel="stylesheet" href="${contextPath}/resources/css/personal.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 
@@ -77,6 +78,26 @@
             </div>
 
 
+
+            <c:forEach var="tweet" items="${tweets}">
+                <div class="tweet">
+                    <div class="tweet-header">
+                        <span><a href="#">${user.nickname}</a></span>
+                    </div>
+                    <div class="tweet-content">
+                        ${tweet.content}
+                    </div>
+                    <div class="tweet-footer">
+                        <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
+                        <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
+                        <span><a href="#" class="tweet-footer-like">Лайк</a></span>
+                    </div>
+                </div>
+            </c:forEach>
+
+
+
+
             <div class="tweet">
                 <div class="tweet-header">
                     <span><a href="#">Anton Motolko</a></span>
@@ -90,6 +111,9 @@
                     <span><a href="#" class="tweet-footer-like">Лайк</a></span>
                 </div>
             </div>
+
+
+
             <div class="tweet">
                 <div class="tweet-header">
                     <span><a href="#">Anton Motolko</a></span>

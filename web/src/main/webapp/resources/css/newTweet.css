@@ -1,0 +1,96 @@
+#zatemnenie {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1000;
+}
+.modal {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    border: 1px solid #000;
+
+}
+.modal-header {
+    width: 600px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
+}
+.modal-container {
+    width: 576px;
+    height: 128px;
+    background-color: rgba(29, 161, 242, 0.1);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 12px;
+}
+.tweet-form-message {
+    width: 548px;
+    height: 58px;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid rgb(164, 217, 249);
+}
+.tweet-form-message input {
+    outline: none;
+    border: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 18px;
+    width: 548px;
+
+}
+.tweet-form-buttonDiv {
+    width: 576px;
+    height: 40px;
+}
+.tweet-button-div {
+    padding-top: 6px;
+    float: right;
+}
+.tweet-button {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(29, 161, 242);
+    color: #038543;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 7px 26px;
+    border-radius: 100px;
+}
+.tweet-button:hover {
+    background-color: #E0F0FA;
+    cursor: pointer;
+
+}
+.tweet-button-div button {
+    color: rgb(29, 161, 242);
+}
+#zatemnenie:target {display: block;}
+.close {
+    display: inline-block;
+    border: 1px solid #0000cc;
+    color: #0000cc;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+.close:hover {background: #e6e6ff;}

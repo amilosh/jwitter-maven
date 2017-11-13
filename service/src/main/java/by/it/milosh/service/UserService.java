@@ -1,6 +1,9 @@
 package by.it.milosh.service;
 
+import by.it.milosh.pojo.Tweet;
 import by.it.milosh.pojo.User;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -11,4 +14,10 @@ public interface UserService {
     User findUserByUsername(String username);
 
     User findUserByNickname(String nickname);
+
+    void addTweetToUserByUsername(String username, Tweet tweet);
+
+    void addTweetToUserByNickname(String nickname, Tweet tweet);
+
+    List<Tweet> getAllTweetsByUser(String nickname);
 }

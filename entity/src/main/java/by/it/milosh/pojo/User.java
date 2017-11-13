@@ -32,6 +32,9 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private List<Role> roles = new ArrayList<Role>();
 
+    @OneToMany(mappedBy = "user")
+    private List<Tweet> tweets;
+
     public User() {
     }
 
@@ -81,6 +84,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Tweet> getTweets() {
+        return tweets;
+    }
+
+    public void setTweets(List<Tweet> tweets) {
+        this.tweets = tweets;
     }
 
     @Override
