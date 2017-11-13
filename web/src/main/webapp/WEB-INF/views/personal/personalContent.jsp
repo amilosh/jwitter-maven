@@ -1,13 +1,72 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <head>
     <link rel="stylesheet" href="${contextPath}/resources/css/personal.css"/>
+    <link rel="stylesheet" href="${contextPath}/resources/css/changeProfile.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
+
+<div id="changeProfile">
+    <div class="modal">
+        <div class="modal-header">
+            <span>Изменить прифиль</span>
+        </div>
+        <div class="changeProfile-container">
+            <div class="changeProfile-form">
+                <form:form method="post" modelAttribute="user" action="${contextPath}/personal/changeProfile1">
+                <table>
+                    <tr>
+                        <td>О себе:</td>
+                        <td>
+                            <div>
+                                <spring:bind path="message">
+                                    <form:input path="message" type="text" placeholder="message"/>
+                                </spring:bind>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Место:</td>
+                        <td>
+                            <div>
+                                <spring:bind path="location">
+                                    <form:input path="location" type="text" placeholder="location"/>
+                                </spring:bind>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Сайт:</td>
+                        <td>
+                            <div>
+                                <spring:bind path="site">
+                                    <form:input path="site" type="text" placeholder="site"/>
+                                </spring:bind>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            <div class="tweet-form-buttonDiv">
+                <div class="tweet-button-div">
+                    <input type="submit" name="submit" value="Сохоанить" class="tweet-button"/>
+                </div>
+            </div>
+
+            <%--<spring:bind path="userNickname">--%>
+                <%--<form:input path="userNickname" type="hidden"  id="userNickname" name="userNickname" value="${user.nickname}"/>--%>
+            <%--</spring:bind>--%>
+
+            </form:form>
+        </div>
+    </div>
+</div>
+</div>
 
 
 <div class="profile-header">
@@ -15,7 +74,14 @@
 
         <div class="profile-info">
             <div class="profile-info-username">
-                <span class="username">${user.name}</span>
+                <a href="${contextPath}/personal/${user.nickname}">
+                    <span class="username">${user.name}</span>
+                </a>
+            </div>
+            <div class="profile-info-nickname">
+                <a href="${contextPath}/personal/${user.nickname}">
+                    <span class="nickname">@${user.nickname}</span>
+                </a>
             </div>
         </div>
 
@@ -47,11 +113,13 @@
                 </li>
                 <li class="profile-navbar-right">
                     <div class="profile-navbar-right-button-div">
-                        <button type="button" class="profile-navbar-right-button">Читать</button>
+                        <a href="#changeProfile" class="profile-navbar-right-button-div-a">
+                            <button type="button" class="profile-navbar-right-button">Изменить профиль</button>
+                        </a>
                     </div>
 
                 </li>
-                <ul>
+                </ul>
         </div>
     </div>
 </div>
@@ -61,9 +129,9 @@
     <div class="profile-data">
         <div class="profile-data-content">
             <span class="profile-data-content-username">${user.name}</span>
-            <span class="profile-data-content-meaasge">Think Different</span>
-            <span class="profile-data-content-location">Minsk, Belarus</span>
-            <span class="profile-data-content-link">motolko.com</span>
+            <span class="profile-data-content-meaasge">${user.message}</span>
+            <span class="profile-data-content-location">${user.location}</span>
+            <span class="profile-data-content-link">${user.site}</span>
             <span class="profile-data-content-registration">Дата регистрации: июнь 2009</span>
         </div>
     </div>
@@ -94,130 +162,6 @@
                     </div>
                 </div>
             </c:forEach>
-
-
-
-
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-
-
-
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
-            <div class="tweet">
-                <div class="tweet-header">
-                    <span><a href="#">Anton Motolko</a></span>
-                </div>
-                <div class="tweet-content">
-                    Ага, Беларусь единственная из канувшего СССР, где День Октябрьской революции - национальный праздник.
-                </div>
-                <div class="tweet-footer">
-                    <span><a href="#" class="tweet-footer-answer">Ответить</a></span>
-                    <span><a href="#" class="tweet-footer-retweet">Ретвит</a></span>
-                    <span><a href="#" class="tweet-footer-like">Лайк</a></span>
-                </div>
-            </div>
 
 
 

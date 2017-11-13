@@ -18,12 +18,11 @@
         </div>
         <div class="modal-container">
             <div class="tweet-form">
-
                 <form:form method="post" modelAttribute="tweet" action="${contextPath}/addNewTweet">
 
                     <spring:bind path="content">
                         <div class="tweet-form-message">
-                            <form:input path="content" type="text" placeholder="content" id="contentTweet" name="contentTweet" autofocus="true"/>
+                            <form:input path="content" type="text" placeholder="Что нового?" id="contentTweet" name="contentTweet" autofocus="true"/>
                         </div>
                     </spring:bind>
 
@@ -38,8 +37,6 @@
                     </spring:bind>
 
                 </form:form>
-
-
             </div>
         </div>
     </div>
@@ -60,7 +57,11 @@
         </div>
         <div class="header-container-right">
             <ul>
-                <li><a href="#zatemnenie"><b>Твитнуть</b></a></li>
+                <li>
+                    <a href="#zatemnenie">
+                        <input type="submit" name="submit" value="Твитнуть"/>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

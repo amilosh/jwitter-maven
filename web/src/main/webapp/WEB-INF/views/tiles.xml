@@ -28,5 +28,9 @@
         <put-attribute name="header" value="/WEB-INF/views/personal/personalHeader.jsp"/>
         <put-attribute name="content" value="/WEB-INF/views/personal/personalContent.jsp"/>
     </definition>
+    <definition name="changeProfile" extends="startTemplate">
+        <put-attribute name="title" value="ChangeProfile page"/>
+        <put-attribute name="content" value="/WEB-INF/views/personal/personalChangeProfile.jsp"/>
+    </definition>
 
 </tiles-definitions>

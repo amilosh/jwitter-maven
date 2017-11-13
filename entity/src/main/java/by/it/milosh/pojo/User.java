@@ -35,6 +35,15 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Tweet> tweets;
 
+    @Column(name = "message")
+    private String message;
+
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "site")
+    private String site;
+
     public User() {
     }
 
@@ -92,6 +101,30 @@ public class User {
 
     public void setTweets(List<Tweet> tweets) {
         this.tweets = tweets;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getSite() {
+        return site;
+    }
+
+    public void setSite(String site) {
+        this.site = site;
     }
 
     @Override

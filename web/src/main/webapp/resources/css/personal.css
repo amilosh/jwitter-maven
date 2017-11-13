@@ -85,11 +85,25 @@ body {
     font-family: "Segoe UI",Arial,sans-serif;
     font-size: 13px;
     text-align: center;
-    padding: 13px 16px;
+    padding: 6px 16px;
     text-decoration: none;
 }
 .header-container-right ul li a:hover {
     background-color: #FFFFFF;
+}
+.header-container-right ul li a input {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 7px 26px;
+    border-radius: 100px;
+}
+.header-container-right ul li a input:hover {
+    background-color: #E0F0FA;
+    cursor: pointer;
 }
 
 
@@ -129,12 +143,38 @@ body {
     float: left;
 }
 .profile-info-username {
-    padding: 12px;
-    text-align: center;
+    padding-top: 9px;
+    padding-bottom: 0px;
     font-family: "Segoe UI",Arial,sans-serif;
     font-size: 18px;
-
 }
+.profile-info-username a {
+    color: #000;
+    text-decoration: none;
+}
+.profile-info-username a:hover {
+    cursor: pointer;
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: #000;
+}
+.profile-info-nickname {
+    padding-top: 0px;
+    padding-bottom: 6px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 14px;
+}
+.profile-info-nickname a {
+    color: rgb(29, 161, 242);
+    text-decoration: none;
+}
+.profile-info-nickname a:hover {
+    cursor: pointer;
+    color: rgb(29, 161, 242);
+    text-decoration: underline;
+    text-decoration-color: rgb(29, 161, 242);
+}
+
 
 
 
@@ -161,7 +201,10 @@ body {
     float: right;
 }
 .profile-navbar-right-button-div {
-    padding-top: 14px;
+    padding-top: 4px;
+}
+.profile-navbar-right-button-div-a {
+    padding-top: 50px;
 }
 .profile-navbar-right-button {
     background-color: #FFFFFF;
@@ -222,7 +265,7 @@ body {
 .profile-data {
     background-color: #e6ecf0;
     width: 300px;
-    display: inline-black;
+    display: inline-block;
     float: left;
 }
 .profile-data-content {
@@ -266,7 +309,7 @@ body {
 .tweets {
     background-color: #e6ecf0;
     width: 600px;
-    display: inline-black;
+    display: inline-block;
     float: left;
 }
 .tweets-content {
@@ -354,7 +397,7 @@ body {
 .recommendation {
     background-color: #e6ecf0;
     width: 290px;
-    display: inline-black;
+    display: inline-block;
     float: left;
 }
 .recommendation-content {

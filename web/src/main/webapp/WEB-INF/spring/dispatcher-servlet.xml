@@ -18,22 +18,8 @@
     <context:component-scan base-package="by.it.milosh.authentication"/>
     <context:component-scan base-package="by.it.milosh.controllers"/>
     <context:component-scan base-package="by.it.milosh.RESTmodel"/>
-    <context:component-scan base-package="by.it.milosh.filters"/>
 
-    <!-- Cyrillic -->
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes">
-                    <list>
-                        <value>text/plain;charset=UTF-8</value>
-                        <value>text/html;charset=UTF-8</value>
-                        <value>application/json;charset=UTF-8</value>
-                    </list>
-                </property>
-            </bean>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
+    <mvc:annotation-driven/>
 
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
