@@ -142,6 +142,16 @@ body {
     padding: 0;
     float: left;
 }
+.profile-info-avatar {
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    float: left;
+}
+.profile-info-name-nickname {
+    display: inline-block;
+    padding-left: 10px;
+}
 .profile-info-username {
     padding-top: 9px;
     padding-bottom: 0px;
@@ -472,5 +482,17 @@ body {
 .footer ul li a:hover{
     color: #038543;
     text-decoration: underline;
+}
+
+/* Avatar */
+.imageDiv {
+    width: 38px;
+    height: 38px;
+    margin-top: 12px;
+}
+.imageDiv img {
+    width: 38px;
+    height: 38px;
+    border-radius: 100px;
 }
 

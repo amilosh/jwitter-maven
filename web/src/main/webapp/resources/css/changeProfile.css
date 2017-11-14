@@ -13,7 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 600px;
-    height: 230px;
+    height: 324px;
     background-color: #fff;
     border-radius: 6px;
     font-family: "Segoe UI",Arial,sans-serif;
@@ -31,14 +31,32 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #000;
 }
+.modal-header-message {
+    display: inline-block;
+    margin-left: 20px;
+}
+.modal-header-close {
+    background-color: #ADDFAD;
+    display: inline-block;
+    margin-right: 20px;
+    float: right;
+}
 .changeProfile-container {
     width: 576px;
-    height: 152px;
+    height: 246px;
     background-color: rgba(29, 161, 242, 0.1);
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
     padding: 12px;
 }
+
+.changeAvatar {
+
+}
+.changeAvatar div {
+    margin-bottom: 20px;
+}
+
 .tweet-form-message {
     width: 548px;
     height: 58px;
@@ -97,3 +115,23 @@
     cursor:pointer;
 }
 .close:hover {background: #e6e6ff;}
+
+
+.cross {
+    height: 16px;
+    width: 16px;
+    background-color: #FFF;
+    position: relative;
+}
+.cross:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c";
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 26px;
+    text-align: center;
+}

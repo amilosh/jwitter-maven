@@ -17,7 +17,20 @@
     ${avatar.image}
 </div>
 
-<img src="/imageServlet">
+<%--<img src="/imageServlet">--%>
+
+<img src="/uploadFileREST">
+
+
+
+<br/><br/>
+
+
+<form method="POST" action="/uploadFile?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+    File to upload: <input type="file" name="file">
+    <input type="submit" value="Upload"> Press here to upload the file!
+</form>
+
 
 
 

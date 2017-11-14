@@ -18,8 +18,6 @@
     <context:component-scan base-package="by.it.milosh.authentication"/>
     <context:component-scan base-package="by.it.milosh.controllers"/>
     <context:component-scan base-package="by.it.milosh.RESTmodel"/>
-    <context:component-scan base-package="by.it.milosh.filters"/>
-    <context:component-scan base-package="by.it.milosh.servlets"/>
 
     <mvc:annotation-driven/>
 
@@ -33,6 +31,11 @@
 
     <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+    </bean>
+
+    <bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="100000" />
     </bean>
 
 </beans>

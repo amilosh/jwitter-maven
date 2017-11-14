@@ -12,9 +12,14 @@
 </head>
 
 <div id="zatemnenie">
-    <div class="modal">
+    <div class="modal-for-tweet">
         <div class="modal-header">
-            <span>Новый твит</span>
+            <div class="modal-header-message">
+                <span>Новый твит</span>
+            </div>
+            <div class="modal-header-close">
+                <span><a href="#"><div class='cross'></div></a></span>
+            </div>
         </div>
         <div class="modal-container">
             <div class="tweet-form">

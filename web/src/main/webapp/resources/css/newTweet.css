@@ -8,7 +8,7 @@
     display: none;
     z-index: 1000;
 }
-.modal {
+.modal-for-tweet {
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -24,12 +24,21 @@
     width: 600px;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
-    text-align: center;
     font-size: 18px;
     font-weight: bold;
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #000;
+}
+.modal-header-message {
+    display: inline-block;
+    margin-left: 20px;
+}
+.modal-header-close {
+    background-color: #ADDFAD;
+    display: inline-block;
+    margin-right: 20px;
+    float: right;
 }
 .modal-container {
     width: 576px;
@@ -94,3 +103,22 @@
     cursor:pointer;
 }
 .close:hover {background: #e6e6ff;}
+
+.cross {
+    height: 16px;
+    width: 16px;
+    background-color: #FFF;
+    position: relative;
+}
+.cross:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c";
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 26px;
+    text-align: center;
+}

@@ -1,12 +1,14 @@
 package by.it.milosh.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,7 +46,14 @@ public class User {
     @Column(name = "site")
     private String site;
 
+    @Column(name = "avatar")
+    private java.sql.Blob avatar;
+
     public User() {
+    }
+
+    public User(Blob avatar) {
+        this.avatar = avatar;
     }
 
     public Long getUserId() {
@@ -125,6 +134,14 @@ public class User {
 
     public void setSite(String site) {
         this.site = site;
+    }
+
+    public Blob getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Blob avatar) {
+        this.avatar = avatar;
     }
 
     @Override

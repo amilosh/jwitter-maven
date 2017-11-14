@@ -11,12 +11,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
+<%-- Всплывающее модальное окно для изменения данных пользователя --%>
 <div id="changeProfile">
     <div class="modal">
         <div class="modal-header">
-            <span>Изменить прифиль</span>
+            <div class="modal-header-message">
+                <span>Изменить профиль</span>
+            </div>
+            <div class="modal-header-close">
+                <span><a href="#"><div class='cross'></div></a></span>
+            </div>
         </div>
         <div class="changeProfile-container">
+
+            <div class="changeAvatar">
+                <form method="POST" action="/uploadAvatarFromPCToDatabase?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+                    <div>
+                        File to upload: <input type="file" name="file">
+                    </div>
+                    <div>
+                        <input type="submit" value="Сменить аватар"> Press here to upload the file!
+                    </div>
+                    <input type="hidden" name="nickname" value="${user.nickname}"/>
+                </form>
+            </div>
+
             <div class="changeProfile-form">
                 <form:form method="post" modelAttribute="user" action="${contextPath}/personal/changeProfile1">
                 <table>
@@ -54,7 +73,7 @@
 
             <div class="tweet-form-buttonDiv">
                 <div class="tweet-button-div">
-                    <input type="submit" name="submit" value="Сохоанить" class="tweet-button"/>
+                    <input type="submit" name="submit" value="Сохранить" class="tweet-button"/>
                 </div>
             </div>
 
@@ -71,17 +90,23 @@
 
 <div class="profile-header">
     <div class="profile-header-container">
-
         <div class="profile-info">
-            <div class="profile-info-username">
-                <a href="${contextPath}/personal/${user.nickname}">
-                    <span class="username">${user.name}</span>
-                </a>
+            <div class="profile-info-avatar">
+                <div class="imageDiv">
+                    <img src="/uploadAvatarFromDatabaseToJSP?nickname=${user.nickname}">
+                </div>
             </div>
-            <div class="profile-info-nickname">
-                <a href="${contextPath}/personal/${user.nickname}">
-                    <span class="nickname">@${user.nickname}</span>
-                </a>
+            <div class="profile-info-name-nickname">
+                <div class="profile-info-username">
+                    <a href="${contextPath}/personal/${user.nickname}">
+                        <span class="username">${user.name}</span>
+                    </a>
+                </div>
+                <div class="profile-info-nickname">
+                    <a href="${contextPath}/personal/${user.nickname}">
+                        <span class="nickname">@${user.nickname}</span>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -162,8 +187,6 @@
                     </div>
                 </div>
             </c:forEach>
-
-
 
         </div>
     </div>

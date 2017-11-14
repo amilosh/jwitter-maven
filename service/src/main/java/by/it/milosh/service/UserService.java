@@ -20,4 +20,6 @@ public interface UserService {
     void addTweetToUserByNickname(String nickname, Tweet tweet);
 
     List<Tweet> getAllTweetsByUser(String nickname);
+
+    void saveAvatarToUser(String nickname, byte[] bytes);
 }

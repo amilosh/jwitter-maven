@@ -74,4 +74,10 @@ public class UserServiceImpl implements UserService {
         List<Tweet> tweets = user.getTweets();
         return tweets;
     }
+
+    @Override
+    public void saveAvatarToUser(String nickname, byte[] bytes) {
+        User user = userDao.findUserByNickname(nickname);
+        userDao.saveAvatarToUser(user, bytes);
+    }
 }
