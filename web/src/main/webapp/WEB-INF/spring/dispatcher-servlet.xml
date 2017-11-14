@@ -18,6 +18,8 @@
     <context:component-scan base-package="by.it.milosh.authentication"/>
     <context:component-scan base-package="by.it.milosh.controllers"/>
     <context:component-scan base-package="by.it.milosh.RESTmodel"/>
+    <context:component-scan base-package="by.it.milosh.filters"/>
+    <context:component-scan base-package="by.it.milosh.servlets"/>
 
     <mvc:annotation-driven/>
 

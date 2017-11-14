@@ -32,5 +32,9 @@
         <put-attribute name="title" value="ChangeProfile page"/>
         <put-attribute name="content" value="/WEB-INF/views/personal/personalChangeProfile.jsp"/>
     </definition>
+    <definition name="image" extends="startTemplate">
+        <put-attribute name="title" value="Image page"/>
+        <put-attribute name="content" value="/WEB-INF/views/image/image.jsp"/>
+    </definition>
 
 </tiles-definitions>
